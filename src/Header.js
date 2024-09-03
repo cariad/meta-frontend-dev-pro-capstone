@@ -1,4 +1,4 @@
-import HeaderMenu from './HeaderMenu';
+import Menu from './Menu';
 import logo from './images/horizontal-logo.png';
 
 function Header() {
@@ -11,7 +11,7 @@ function Header() {
         width={200}
       />
 
-      <HeaderMenu />
+      <Menu />
     </header>
   );
 }

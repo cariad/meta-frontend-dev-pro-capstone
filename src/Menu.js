@@ -1,4 +1,4 @@
-function HeaderMenu() {
+function Menu() {
   return (
     <nav>
       <ul>
@@ -13,4 +13,4 @@ function HeaderMenu() {
   );
 }
 
-export default HeaderMenu;
+export default Menu;
