@@ -1,0 +1,6 @@
+footer {
+  background: var(--dark-green);
+  color: var(--light-green);
+  font-size: var(--small-text);
+  row-gap: 40px;
+}

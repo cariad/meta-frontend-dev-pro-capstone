@@ -1,0 +1,9 @@
+header li {
+  margin: auto;
+}
+
+header ul {
+  column-gap: 10px;
+  display: flex;
+  flex-flow: row wrap;
+}
