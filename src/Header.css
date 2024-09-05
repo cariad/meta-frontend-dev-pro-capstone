@@ -1,5 +1,6 @@
 header {
   align-items: center;
+  padding-bottom: var(--section-padding);
 }
 
 header a {

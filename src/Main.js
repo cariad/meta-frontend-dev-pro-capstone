@@ -1,6 +1,9 @@
+import Hero from './Hero'
+
 function Main() {
   return (
-    <main className='row'>
+    <main>
+      <Hero />
     </main>
   );
 }

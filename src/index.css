@@ -1,14 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Markazi+Text:wght@400..700&display=swap');
 
 :root {
   --black: rgb(51, 51, 51);
+  --yellow: rgb(244, 206, 20);
   --dark-green: rgb(73, 94, 87);
   --light-green: rgb(237, 239, 238);
+
   --small-text: 0.9em;
+
+  --border-radius: 16px;
+  --section-padding: 40px;
 }
 
 body {
   --bs-body-font-family: 'Karla', var(--bs-font-sans-serif);
+}
+
+h1,
+h2 {
+  font-family: "Markazi Text", serif;
+  margin: 0 !important;
+}
+
+h1 {
+  font-size: 4em;
+  line-height: 0.6;
+}
+
+h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px !important;
+}
+
+h4 {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+p.lead {
+  font-size: 1em;
+  font-weight: 500;
 }
 
 footer ul,
@@ -23,11 +54,14 @@ nav li {
   margin: auto;
 }
 
-.primary-link-text {
-  font-weight: 700;
+.btn-primary {
+  --bs-btn-bg: var(--yellow);
+  --bs-btn-color: var(--black);
+  --bs-btn-font-weight: 700;
+  --bs-btn-border-color: var(--yellow);
+  --bs-btn-border-radius: var(--border-radius);
 }
 
-h4 {
-  font-size: 1em !important;
-  font-weight: 700 !important;
+.primary-link-text {
+  font-weight: 700;
 }

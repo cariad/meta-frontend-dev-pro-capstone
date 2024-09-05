@@ -2,5 +2,9 @@ footer {
   background: var(--dark-green);
   color: var(--light-green);
   font-size: var(--small-text);
+
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+
   row-gap: 40px;
 }
