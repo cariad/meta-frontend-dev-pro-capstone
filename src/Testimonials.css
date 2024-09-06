@@ -1,0 +1,6 @@
+#testimonials {
+  background-color: var(--light-green);
+
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
