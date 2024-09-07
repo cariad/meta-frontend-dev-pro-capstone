@@ -3,8 +3,8 @@ footer {
   color: var(--light-green);
   font-size: var(--small-text);
 
-  padding-top: var(--section-padding);
-  padding-bottom: var(--section-padding);
+  padding-top: calc(var(--section-padding) / 2);
+  padding-bottom: calc(var(--section-padding) / 2);
 
   row-gap: 40px;
 }

@@ -1,0 +1,23 @@
+#about {
+  align-items: center;
+
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+
+  row-gap: 20px;
+}
+
+#about img {
+  border-radius: var(--border-radius);
+  filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+#about img:nth-of-type(even) {
+  position: relative;
+  top: -150px;
+  left: 50px;
+}
+
+#about-images-container {
+  height: 350px;
+}
