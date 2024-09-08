@@ -1,0 +1,8 @@
+.booking-page {
+  padding-top: 40px;
+  padding-bottom: var(--section-padding);
+}
+
+.booking-page h1 {
+  margin-bottom: 40px !important;
+}
