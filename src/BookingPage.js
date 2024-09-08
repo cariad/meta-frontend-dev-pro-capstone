@@ -1,7 +1,10 @@
 import BookingForm from './BookingForm';
 import './BookingPage.css'
 
-function BookingPage() {
+function BookingPage({
+  availableTimes,
+  setAvailableTimes,
+}) {
   return (
     <div className='booking-page row'>
       <div className='
@@ -12,7 +15,11 @@ function BookingPage() {
         <h1>Reserve a Table</h1>
       </div>
 
-      <BookingForm />
+      <BookingForm
+        availableTimes={availableTimes}
+        setAvailableTimes={setAvailableTimes}
+      />
+
     </div>
   );
 }

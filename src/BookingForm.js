@@ -1,15 +1,6 @@
 import { useState } from 'react';
 
-function BookingForm() {
-  const [availableTimes] = useState([
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00',
-    '22:00'
-  ])
-
+function BookingForm({availableTimes}) {
   const tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
 
