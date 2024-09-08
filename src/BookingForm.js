@@ -1,18 +1,26 @@
 import { useState } from 'react';
 
-function BookingForm({availableTimes}) {
+function BookingForm({
+  availableTimes,
+  updateAvailableTimes,
+}) {
   const tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
 
-  const [date, setDate] = useState(tomorrow.toISOString().substring(0,10))
-  const [guests, setGuests] = useState(2)
-  const [occasion, setOccasion] = useState()
-  const [time, setTime] = useState('17:00')
+  const [date, setDate] = useState(tomorrow.toISOString().substring(0,10));
+  const [guests, setGuests] = useState(2);
+  const [occasion, setOccasion] = useState();
+  const [time, setTime] = useState('17:00');
+
+  const onDateChange = e => {
+    setDate(e.target.value);
+    updateAvailableTimes(e.target.value);
+  };
 
   const onSubmit = e => {
     e.preventDefault();
     console.log('Submitted.');
-  }
+  };
 
   return (
     <form
@@ -31,7 +39,7 @@ function BookingForm({availableTimes}) {
 
       <input
         id="res-date"
-        onChange={e => setDate(e.target.value)}
+        onChange={onDateChange}
         type="date"
         value={date}
       />

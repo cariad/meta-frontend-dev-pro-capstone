@@ -3,7 +3,7 @@ import './BookingPage.css'
 
 function BookingPage({
   availableTimes,
-  setAvailableTimes,
+  updateAvailableTimes,
 }) {
   return (
     <div className='booking-page row'>
@@ -17,7 +17,7 @@ function BookingPage({
 
       <BookingForm
         availableTimes={availableTimes}
-        setAvailableTimes={setAvailableTimes}
+        updateAvailableTimes={updateAvailableTimes}
       />
 
     </div>
