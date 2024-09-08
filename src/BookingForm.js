@@ -54,7 +54,9 @@ function BookingForm({
         value={time}
       >
         {
-          availableTimes.map(time =><option key={time}>{time}</option>)
+          availableTimes
+            ? availableTimes.map(time => <option key={time}>{time}</option>)
+            : null
         }
       </select>
 
