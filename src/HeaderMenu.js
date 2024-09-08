@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import './HeaderMenu.css';
 
 function HeaderMenu() {
@@ -8,10 +9,10 @@ function HeaderMenu() {
       col-xl-5
     '>
       <ul>
-        <li><a className='primary-link-text' href='.'>Home</a></li>
+        <li><Link to="/" className="primary-link-text">Home</Link></li>
         <li><a className='primary-link-text' href='.'>About</a></li>
         <li><a className='primary-link-text' href='.'>Menu</a></li>
-        <li><a className='primary-link-text' href='.'>Reservations</a></li>
+        <li><Link to="/booking" className="primary-link-text">Reservations</Link></li>
         <li><a className='primary-link-text' href='.'>Order Online</a></li>
         <li><a className='primary-link-text' href='.'>Login</a></li>
       </ul>
