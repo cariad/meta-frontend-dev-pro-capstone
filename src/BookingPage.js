@@ -3,6 +3,7 @@ import './BookingPage.css'
 
 function BookingPage({
   availableTimes,
+  submitForm,
   updateAvailableTimes,
 }) {
   return (
@@ -17,6 +18,7 @@ function BookingPage({
 
       <BookingForm
         availableTimes={availableTimes}
+        submitForm={submitForm}
         updateAvailableTimes={updateAvailableTimes}
       />
 

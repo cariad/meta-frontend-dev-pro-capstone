@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 function BookingForm({
   availableTimes,
+  submitForm,
   updateAvailableTimes,
 }) {
   const [date, setDate] = useState(new Date().toISOString().substring(0,10));
@@ -16,7 +17,13 @@ function BookingForm({
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log('Submitted.');
+
+    submitForm({
+      'date': date,
+      'guests': guests,
+      'occasion': occasion,
+      'time': time,
+    });
   };
 
   return (
