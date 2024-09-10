@@ -4,10 +4,7 @@ function BookingForm({
   availableTimes,
   updateAvailableTimes,
 }) {
-  const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
-
-  const [date, setDate] = useState(tomorrow.toISOString().substring(0,10));
+  const [date, setDate] = useState(new Date().toISOString().substring(0,10));
   const [guests, setGuests] = useState(2);
   const [occasion, setOccasion] = useState();
   const [time, setTime] = useState('17:00');

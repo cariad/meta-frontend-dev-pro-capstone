@@ -8,9 +8,9 @@ function BookingPage({
   return (
     <div className='booking-page row'>
       <div className='
-          offset-1
-          offset-md-2
-          offset-xl-3
+          offset-1    col-11
+          offset-md-2 col-md-8
+          offset-xl-3 col-xl-6
       '>
         <h1>Reserve a Table</h1>
       </div>
