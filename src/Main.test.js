@@ -1,16 +1,16 @@
-import { initializeTimes, reduceAvailableTimes } from './Main';
-
-test('Has correct initial available times', () => {
-  expect(initializeTimes()).toEqual([
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00',
-    '22:00'
-  ]);
-});
+import { reduceAvailableTimes } from './Main';
 
 test('Reducer returns same value', () => {
-  expect(reduceAvailableTimes('foo')).toEqual('foo');
+  const actual = reduceAvailableTimes(undefined, '2024-01-01');
+
+  const expectation = [
+    "17:00",
+    "17:30",
+    "18:00",
+    "20:00",
+    "21:00",
+    "23:30",
+  ]
+
+  expect(actual).toEqual(expectation);
 });
