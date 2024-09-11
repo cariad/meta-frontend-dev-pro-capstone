@@ -1,7 +1,7 @@
 import HomePage from './HomePage';
 import BookingPage from './BookingPage';
 import ConfirmedBooking from './ConfirmedBooking';
-import { useReducer } from 'react';
+import { useReducer, useState } from 'react';
 import { Route, Routes, useNavigate } from "react-router-dom";
 
 // API provided by Meta:
@@ -47,6 +47,11 @@ function Main() {
     initializeTimes(),
   );
 
+  const today = new Date().toISOString().substring(0,10);
+
+  const [date, setDate] = useState(today);
+  const [guests, setGuests] = useState(2);
+
   const submitForm = formData => {
     submitAPI(formData);
     navigate('/confirmed-booking');
@@ -60,6 +65,10 @@ function Main() {
         <Route
           element={<BookingPage
             availableTimes={availableTimes}
+            date={date}
+            guests={guests}
+            setDate={setDate}
+            setGuests={setGuests}
             submitForm={submitForm}
             updateAvailableTimes={updateAvailableTimes}
           />}

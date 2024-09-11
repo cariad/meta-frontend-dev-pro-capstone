@@ -1,18 +1,24 @@
 import { useFormik } from "formik";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import * as Yup from 'yup';
 
 function BookingForm({
   availableTimes,
+  date,
+  guests,
+  hasErrors,
+  setDate,
+  setGuests,
   submitForm,
   updateAvailableTimes,
 }) {
-  const today = new Date().toISOString().substring(0,10);
+  const minDate = new Date();
+  minDate.setHours(0, 0, 0, 0);
 
   const { errors, getFieldProps, handleSubmit, isValid } = useFormik({
     initialValues: {
-      date: today,
-      guests: 2,
+      date,
+      guests,
     },
     onSubmit: () => {
       submitForm({
@@ -25,6 +31,8 @@ function BookingForm({
     validationSchema: Yup.object({
       date: Yup.date().required(
         'Please specify the date of your visit.'
+      ).min(
+        minDate, 'Reservations cannot be made for the past.'
       ),
       guests: Yup.number().required(
         'Please specify the number of guests.'
@@ -36,8 +44,10 @@ function BookingForm({
     }),
   });
 
-  const [date, setDate] = useState(today);
-  const [guests, setGuests] = useState(2);
+  useEffect(() => {
+    if (hasErrors && !isValid) hasErrors()
+    }, [hasErrors, isValid])
+
   const [occasion, setOccasion] = useState();
   const [time, setTime] = useState('17:00');
 
@@ -66,7 +76,7 @@ function BookingForm({
 
       <input
         id="res-date"
-        min={today}
+        min={minDate.toISOString().substring(0, 10)}
         onChange={onDateChange}
         type="date"
         value={date}
