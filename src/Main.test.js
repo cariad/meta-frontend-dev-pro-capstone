@@ -1,4 +1,8 @@
-import { reduceAvailableTimes } from './Main';
+import { initializeTimes, reduceAvailableTimes } from './Main';
+
+test('Has any initial available times', () => {
+  expect(initializeTimes().length).toBeGreaterThan(0);
+});
 
 test('Reducer returns same value', () => {
   const actual = reduceAvailableTimes(undefined, '2024-01-01');
