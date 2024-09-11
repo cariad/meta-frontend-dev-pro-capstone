@@ -5,7 +5,9 @@ function BookingForm({
   submitForm,
   updateAvailableTimes,
 }) {
-  const [date, setDate] = useState(new Date().toISOString().substring(0,10));
+  const today = new Date().toISOString().substring(0,10);
+
+  const [date, setDate] = useState(today);
   const [guests, setGuests] = useState(2);
   const [occasion, setOccasion] = useState();
   const [time, setTime] = useState('17:00');
@@ -43,6 +45,7 @@ function BookingForm({
 
       <input
         id="res-date"
+        min={today}
         onChange={onDateChange}
         type="date"
         value={date}
