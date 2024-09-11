@@ -110,3 +110,9 @@ form select {
   border-radius: 4px;
   border: 1px solid var(--dark-green);
 }
+
+.invalid {
+  color: red;
+  font-size: var(--small-text);
+  margin-top: 3px;
+}

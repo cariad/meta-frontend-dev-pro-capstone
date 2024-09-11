@@ -1,4 +1,6 @@
+import { useFormik } from "formik";
 import { useState } from 'react';
+import * as Yup from 'yup';
 
 function BookingForm({
   availableTimes,
@@ -6,6 +8,33 @@ function BookingForm({
   updateAvailableTimes,
 }) {
   const today = new Date().toISOString().substring(0,10);
+
+  const { errors, getFieldProps, handleSubmit, isValid } = useFormik({
+    initialValues: {
+      date: today,
+      guests: 2,
+    },
+    onSubmit: () => {
+      submitForm({
+        'date': date,
+        'guests': guests,
+        'occasion': occasion,
+        'time': time,
+      });
+    },
+    validationSchema: Yup.object({
+      date: Yup.date().required(
+        'Please specify the date of your visit.'
+      ),
+      guests: Yup.number().required(
+        'Please specify the number of guests.'
+      ).integer().min(
+        1, 'At least one guest must be present.'
+      ).max(
+        10, 'Please contact us to arrange a booking for more than 10 guests.'
+      )
+    }),
+  });
 
   const [date, setDate] = useState(today);
   const [guests, setGuests] = useState(2);
@@ -17,17 +46,6 @@ function BookingForm({
     updateAvailableTimes(e.target.value);
   };
 
-  const onSubmit = e => {
-    e.preventDefault();
-
-    submitForm({
-      'date': date,
-      'guests': guests,
-      'occasion': occasion,
-      'time': time,
-    });
-  };
-
   return (
     <form
       className='
@@ -36,7 +54,10 @@ function BookingForm({
         offset-md-2 col-md-8
         offset-xl-3 col-xl-6
       '
-      onSubmit={onSubmit}
+      onSubmit={e => {
+        e.preventDefault();
+        handleSubmit();
+      }}
     >
 
       <label htmlFor="res-date">
@@ -49,7 +70,9 @@ function BookingForm({
         onChange={onDateChange}
         type="date"
         value={date}
+        {...getFieldProps('date')}
       />
+      {errors.date ? <p className='invalid'>{errors.date}</p> : null}
 
       <label htmlFor="res-time">
         Time <span className='required'>*</span>
@@ -73,13 +96,13 @@ function BookingForm({
 
       <input
         id="guests"
-        max="10"
-        min="1"
         onChange={e => setGuests(e.target.value)}
         placeholder="1"
         type="number"
         value={guests}
+        {...getFieldProps('guests')}
       />
+      {errors.guests ? <p className='invalid'>{errors.guests}</p> : null}
 
       <label htmlFor="occasion">Occasion</label>
 
@@ -94,6 +117,7 @@ function BookingForm({
       </select>
 
       <input
+        disabled={!isValid}
         type="submit"
         value="Reserve this table"
       />
