@@ -127,6 +127,7 @@ function BookingForm({
       </select>
 
       <input
+        className='btn btn-primary'
         disabled={!isValid}
         type="submit"
         value="Reserve this table"

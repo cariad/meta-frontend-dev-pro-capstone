@@ -76,11 +76,16 @@ nav li {
 }
 
 .btn-primary {
+  --bs-btn-active-bg: var(--dark-green);
+  --bs-btn-active-border-color: var(--yellow);
   --bs-btn-bg: var(--yellow);
-  --bs-btn-color: var(--black);
-  --bs-btn-font-weight: 700;
   --bs-btn-border-color: var(--yellow);
   --bs-btn-border-radius: var(--border-radius);
+  --bs-btn-color: var(--black);
+  --bs-btn-font-weight: 700;
+  --bs-btn-hover-bg: var(--yellow);
+  --bs-btn-hover-border-color: var(--yellow);
+  --bs-btn-hover-color: var(--black);
 }
 
 .primary-link-text {
