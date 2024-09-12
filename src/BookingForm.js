@@ -82,7 +82,7 @@ function BookingForm({
         value={date}
         {...getFieldProps('date')}
       />
-      {errors.date ? <p className='invalid'>{errors.date}</p> : null}
+      {errors.date ? <p className='invalid' role='alert'>{errors.date}</p> : null}
 
       <label htmlFor="res-time">
         Time <span className='required'>*</span>
@@ -112,7 +112,7 @@ function BookingForm({
         value={guests}
         {...getFieldProps('guests')}
       />
-      {errors.guests ? <p className='invalid'>{errors.guests}</p> : null}
+      {errors.guests ? <p className='invalid' role='alert'>{errors.guests}</p> : null}
 
       <label htmlFor="occasion">Occasion</label>
 
