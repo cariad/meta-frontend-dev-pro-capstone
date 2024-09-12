@@ -3,7 +3,7 @@ import star from './images/star.png';
 
 function Testimonial(props) {
   return (
-    <div className='testimonial'>
+    <section className='testimonial'>
       <div className='stars'>
         <img src={star} width={25} alt='Star' />
         <img src={star} width={25} alt='Star' />
@@ -22,7 +22,7 @@ function Testimonial(props) {
       </div>
 
       <p>"{props.review}"</p>
-    </div>
+    </section>
   );
 }
 

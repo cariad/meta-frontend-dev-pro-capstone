@@ -4,7 +4,7 @@ import bike from './images/bike.png';
 
 function Special(props) {
   return (
-    <div className='special'>
+    <section className='special'>
       <div className='card'>
 
         <img
@@ -29,7 +29,7 @@ function Special(props) {
 
         </article>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -3,7 +3,7 @@ import './FooterMenu.css';
 
 function FooterMenu() {
   return (
-    <div className='
+    <section className='
       col-4
       col-md-3
       col-lg-2
@@ -19,7 +19,7 @@ function FooterMenu() {
           <li><a href='.'>Login</a></li>
         </ul>
       </nav>
-    </div>
+    </section>
   );
 }
 

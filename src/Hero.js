@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import './Hero.css'
 import logo from './images/restaurant_chef_b.jpg';
 
 function Hero() {
   return (
-    <div
+    <section
       className='row'
       id='hero'
     >
@@ -19,17 +20,17 @@ function Hero() {
           recipes served with a modern twist.
         </p>
         <p>
-          <a
+          <Link
             className='btn btn-primary'
-            href='.'
             role='button'
+            to="/booking"
           >
             Reserve a Table
-          </a>
+          </Link>
         </p>
       </article>
 
-      <div
+      <aside
         className='
           col-md-6
           col-lg-4
@@ -42,8 +43,8 @@ function Hero() {
           src={logo}
           width={845 / 4}
         />
-      </div>
-    </div>
+      </aside>
+    </section>
   );
 }
 

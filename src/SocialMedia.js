@@ -1,6 +1,6 @@
 function SocialMedia() {
   return (
-    <div className='
+    <section className='
         col-4
         col-md-3
         col-lg-2
@@ -12,7 +12,7 @@ function SocialMedia() {
         <li><a href='.'>Facebook</a></li>
         <li><a href='.'>Instagram</a></li>
       </ul>
-    </div>
+    </section>
   );
 }
 

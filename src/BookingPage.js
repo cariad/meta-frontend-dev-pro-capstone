@@ -11,7 +11,7 @@ function BookingPage({
   updateAvailableTimes,
 }) {
   return (
-    <div className='booking-page row'>
+    <section className='booking-page row'>
       <div className='
           offset-1    col-11
           offset-md-2 col-md-8
@@ -30,7 +30,7 @@ function BookingPage({
         updateAvailableTimes={updateAvailableTimes}
       />
 
-    </div>
+    </section>
   );
 }
 

@@ -5,7 +5,7 @@ import owners_b from './images/owners_b.jpg';
 
 function About() {
   return (
-    <div
+    <section
       className='row'
       id='about'
     >
@@ -27,7 +27,7 @@ function About() {
         </p>
       </article>
 
-      <div
+      <aside
         className='
           col-8   offset-3
           col-md-6 offset-md-0
@@ -49,8 +49,8 @@ function About() {
           src={owners_b}
           width={800 / 4}
         />
-      </div>
-    </div>
+      </aside>
+    </section>
   );
 }
 
